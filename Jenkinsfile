@@ -56,20 +56,6 @@ pipeline {
 
         }
 
-        stage("paso 3"){
-
-            steps {
-
-                script {
-
-                sh "echo 'Build .Jar!'"
-
-                }
-
-            }
-
-        }
-
     }
 
     post {
