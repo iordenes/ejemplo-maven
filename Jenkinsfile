@@ -18,11 +18,11 @@ pipeline {
 
             steps {
 
-                script {
-
-                sh "echo 'Hello, World Usach 2021!'"
-
-                }
+                checkout(
+                    [$class: 'GitSCM'],
+                    branches: [[name: "jenkins" ]],
+                    userRemoteConfigs: [[url: 'https://github.com/iordenes/ejemplo-maven']]])
+                )
 
             }
 
