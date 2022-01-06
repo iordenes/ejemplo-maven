@@ -24,7 +24,7 @@ pipeline {
 
                         branches: [[name: "jenkins" ]],
 
-                        userRemoteConfigs: [[url: 'https://github.com/tundervirld/clase2mod3seccion3']]])
+                        userRemoteConfigs: [[url: 'https://github.com/iordenes/ejemplo-maven/']]])
 
             }
 
