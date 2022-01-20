@@ -1,3 +1,5 @@
+
+
 import groovy.json.JsonSlurperClassic
 
 def jsonParse(def json) {
@@ -71,6 +73,24 @@ pipeline {
                 success {
 
                     archiveArtifacts artifacts:'build/*.jar'
+
+                }
+
+            }
+
+        }
+
+        stage("Paso 4: Análisis SonarQube"){
+
+            steps {
+
+                withSonarQubeEnv('sonarqube') {
+
+                    sh "echo 'Calling sonar Service in another docker container!'"
+
+                    // Run Maven on a Unix agent to execute Sonar.
+
+                    sh 'mvn clean verify sonar:sonar'
 
                 }
 
